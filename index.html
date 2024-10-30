@@ -17,26 +17,36 @@
   <body>
     <div class="weather-app">
       <header>
-        <form>
-          <input type="search" placeholder="Enter a city.." required />
-          <input type="submit" value="Search" />
+        <form class="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            class="search-form-input"
+          />
+          <input type="submit" value="Search" class="search-form-button" />
         </form>
       </header>
 
       <main>
-        <div>
-          <h1>Brussels</h1>
-          <p>
-            Tuesday, 17:25
-            <br />
-            13°C
-            <br />
-            29 October, Overcast clouds
-            <br />
-            Humidity: 88%, Wind: 2.06km/h
-          </p>
+        <div class="weather-app-data">
+          <div>
+            <h1 class="weather-app-city">Brussels</h1>
+            <p class="weather-app-details">
+              Tuesday, 29 October
+              <br>
+              <div class="weather-app-temperature-container">
+              <div class="weather-app-temperature">13</div>
+              <div class="weather-app-unit">°C</div>
+              </div>
+              <br />
+              17:25, overcast clouds
+              <br />
+              Humidity: <span class="highlight">88%</span>, Wind: <span class="highlight">2.06km/h</span>
+            </p>
+          </div>
+          <div class="weather-app-emoji">🌤</div>
         </div>
-        <div>🌤</div>
       </main>
 
       <footer>
