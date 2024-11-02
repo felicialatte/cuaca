@@ -8,6 +8,7 @@ function refreshWeather(response) {
   let timeElement = document.querySelector("#time");
   let dayAndDateElement = document.querySelector("#day-and-date");
   let date = new Date(response.data.time * 1000);
+  let iconElement = document.querySelector("#icon");
 
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = updateTime(date);
@@ -16,6 +17,7 @@ function refreshWeather(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed} km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-emoji" />`;
 }
 
 function formatDate(date) {
@@ -51,22 +53,22 @@ function formatDate(date) {
   return `${day}, ${currentDate} ${month}`;
 }
 
-function updateTime(date) {
+function updateTime() {
   let now = new Date();
-  let timeString = now.toLocaleTimeString();
-  document.getElementById("time").innerText = timeString;
+  //let timeString = now.toLocaleTimeString();
+  //document.getElementById("time").innerText = timeString;
 
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
 
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
 
-  let period = hours >= 12 ? "PM" : "AM";
-  hours = hours % 12 || 12;
+  // let period = hours >= 12 ? "PM" : "AM";
+  //hours = hours % 12 || 12;
 
-  return `${hours}:${minutes} ${period}`;
+  return `${hours}:${minutes}`;
 }
 
 function searchCity(city) {
@@ -85,6 +87,6 @@ function handleSearchSubmit(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-searchCity("Jakarta");
-setInterval(updateTime, 1000);
-updateTime();
+searchCity("Brussels");
+//setInterval(updateTime, 1000);
+//updateTime();
