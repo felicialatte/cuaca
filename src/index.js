@@ -10,7 +10,7 @@ function refreshWeather(response) {
   let date = new Date(response.data.time * 1000);
 
   cityElement.innerHTML = response.data.city;
-  timeElement.innerHTML = formatTime(date);
+  timeElement.innerHTML = updateTime(date);
   dayAndDateElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
@@ -51,7 +51,11 @@ function formatDate(date) {
   return `${day}, ${currentDate} ${month}`;
 }
 
-function formatTime(date) {
+function updateTime(date) {
+  let now = new Date();
+  let timeString = now.toLocaleTimeString();
+  document.getElementById("time").innerText = timeString;
+
   let hours = date.getHours();
   let minutes = date.getMinutes();
 
@@ -82,3 +86,5 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Jakarta");
+setInterval(updateTime, 1000);
+updateTime();
