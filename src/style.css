@@ -6,16 +6,18 @@ body {
   font-style: normal;
 }
 
+h1 {
+  font-family: "Homemade Apple", cursive;
+  font-weight: 500;
+  font-style: normal;
+}
+
 a {
-  color: blueviolet;
+  color: #7f9da5;
 }
 
 .weather-app {
-  background: linear-gradient(
-    179.4deg,
-    rgb(253, 240, 233) 2.2%,
-    rgb(255, 194, 203) 96.2%
-  );
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/146/924/original/philip-oroni-5kvlRI_-eVA-unsplash.jpg?1728481584);
   max-width: 600px;
   margin: 50px auto;
   padding: 30px;
@@ -38,7 +40,7 @@ header {
 }
 
 .search-form-button {
-  background: #d38ea6;
+  background: #3a9797;
   color: white;
   padding: 15px 30px;
   border: none;
@@ -70,16 +72,18 @@ main {
 }
 
 .highlight {
-  color: #d16e91;
+  color: #3a9797;
   font-weight: bold;
 }
 
 .weather-app-temperature-container {
   display: flex;
+  margin-right: 20px;
+  margin-top: 15px;
 }
 
 .weather-app-temperature {
-  font-size: 75px;
+  font-size: 80px;
   font-weight: bold;
 }
 
@@ -89,11 +93,9 @@ main {
 }
 
 .weather-app-emoji {
-  display: flex;
-  margin-top: 40px;
-  margin-right: 25px;
-  width: 200px;
-  height: 200px;
+  width: 88px;
+  height: 88px;
+  margin-top: 10px;
 }
 
 footer {
@@ -105,5 +107,5 @@ footer {
 }
 
 .footer-links {
-  color: #c2567c;
+  color: #2a7070;
 }

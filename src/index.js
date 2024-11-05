@@ -87,6 +87,6 @@ function handleSearchSubmit(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-searchCity("Brussels");
+searchCity("Surabaya");
 //setInterval(updateTime, 1000);
 //updateTime();
