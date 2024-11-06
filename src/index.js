@@ -2,6 +2,8 @@ function refreshWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#city");
+  let feelsLikeElement = document.querySelector("#feels-like");
+  let feelsLike = response.data.temperature.feels_like;
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -13,6 +15,7 @@ function refreshWeather(response) {
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = updateTime(date);
   dayAndDateElement.innerHTML = formatDate(date);
+  feelsLikeElement.innerHTML = Math.round(feelsLike);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed} km/h`;
@@ -55,8 +58,8 @@ function formatDate(date) {
 
 function updateTime() {
   let now = new Date();
-  //let timeString = now.toLocaleTimeString();
-  //document.getElementById("time").innerText = timeString;
+  let timeString = now.toLocaleTimeString();
+  document.getElementById("time").innerText = timeString;
 
   let hours = now.getHours();
   let minutes = now.getMinutes();
@@ -65,8 +68,8 @@ function updateTime() {
     minutes = `0${minutes}`;
   }
 
-  // let period = hours >= 12 ? "PM" : "AM";
-  //hours = hours % 12 || 12;
+  let period = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12 || 12;
 
   return `${hours}:${minutes}`;
 }
@@ -87,6 +90,6 @@ function handleSearchSubmit(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-searchCity("Surabaya");
-//setInterval(updateTime, 1000);
-//updateTime();
+searchCity("Los Angeles");
+setInterval(updateTime, 1000);
+updateTime();
