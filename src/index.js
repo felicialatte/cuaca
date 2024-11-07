@@ -2,6 +2,7 @@ function refreshWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#city");
+  let countryElement = document.querySelector("#country");
   let feelsLikeElement = document.querySelector("#feels-like");
   let feelsLike = response.data.temperature.feels_like;
   let descriptionElement = document.querySelector("#description");
@@ -13,6 +14,7 @@ function refreshWeather(response) {
   let iconElement = document.querySelector("#icon");
 
   cityElement.innerHTML = response.data.city;
+  countryElement.innerHTML = response.data.country;
   timeElement.innerHTML = updateTime(date);
   dayAndDateElement.innerHTML = formatDate(date);
   feelsLikeElement.innerHTML = Math.round(feelsLike);
