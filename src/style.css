@@ -135,8 +135,10 @@ main {
 }
 
 .weather-forecast-icon {
-  font-size: 38px;
-  text-align: center;
+  width: 88px;
+  height: 88px;
+  display: block;
+  margin: 0 auto;
 }
 
 .weather-forecast-temperatures {
@@ -152,14 +154,14 @@ main {
 }
 
 footer {
-  border-top: 1px solid rgba(203, 203, 207, 0.9);
-  padding: 30px 0 0 0;
+  border-top: 1px solid rgba(203, 203, 207, 0.2);
+  padding: 18px 0 0 0;
   text-align: center;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(112, 120, 122, 0.9);
 }
 
 .footer-links {
-  color: rgb(27, 83, 97);
+  color: rgba(35, 105, 122, 0.7);
   font-weight: 500;
 }
